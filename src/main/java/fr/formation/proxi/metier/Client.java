@@ -53,7 +53,7 @@ public class Client {
 		this.address = address;
 	}
 
-	public Client(Integer idClient, String number, String firstname, String lastname, String birthDate,
+	public Client(Integer idClient, String birthDate, String firstname, String lastname, String number,
 			List<Account> accounts) {
 		this.idClient = idClient;
 		this.number = number;

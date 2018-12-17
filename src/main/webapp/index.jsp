@@ -35,11 +35,6 @@
 </head>
 
 <body id="page-top">
-	<div>
-		<label >nom prenom</label>
-		<input type="text">
-	</div>
-
 <<<<<<< HEAD
 	<!-- Header -->
 	<header class="masthead">

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.formation.proxi.metier.AccountService;
+import fr.formation.proxi.metier.CurrentAccount;
+import fr.formation.proxi.metier.SavingsAccount;
 import fr.formation.proxi.metier.Account;
 import fr.formation.proxi.persistance.AccountDao;
 import fr.formation.proxi.persistance.CardDao;
@@ -22,6 +24,11 @@ public class AccountService {
 
 	private ClientDao clientDao;
 
+	public AccountService() {
+		this.accountDao = new AccountDao();
+		this.clientDao = new ClientDao();
+	}
+	
 	public static AccountService getInstance() {
 		return AccountService.INSTANCE;
 	}
@@ -35,11 +42,33 @@ public class AccountService {
 	}
 
 	public List<Account> getAllSavingAccounts(Integer idClient) {
-		return null;
+		List<Account> SavingAccounts = new ArrayList<>();
+		List<Account> accounts = new ArrayList<>();
+
+		accounts = this.clientDao.read(idClient).getAccounts();
+
+
+		for (Account account : accounts) {
+			if (account instanceof SavingsAccount) {
+				SavingAccounts.add(account);
+			}
+		}
+		return SavingAccounts;
 	}
 
 	public List<Account> getAllCurrentAccounts(Integer idClient) {
-		return null;
+		List<Account> currentAccounts = new ArrayList<>();
+		List<Account> accounts = new ArrayList<>();
+
+		accounts = this.clientDao.read(idClient).getAccounts();
+
+
+		for (Account account : accounts) {
+			if (account instanceof CurrentAccount) {
+				currentAccounts.add(account);
+			}
+		}
+		return currentAccounts;
 	}
 
 	
