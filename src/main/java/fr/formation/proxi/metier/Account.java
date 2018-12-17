@@ -31,12 +31,12 @@ public class Account {
 	private String openingDate;
 	
 	@OneToOne
-	@JoinColumn(name="idAccount", referencedColumnName="idAccount")
-	private Integer idCheck;
+	@JoinColumn(name="idCheck", referencedColumnName="idCheck")
+	private Check check;
 	
 	@OneToOne
-	@JoinColumn(name="idAccount", referencedColumnName="idAccount")
-	private Integer idCard;
+	@JoinColumn(name="idCard", referencedColumnName="idCard")
+	private Card card;
 	
 	@Column
 	private Boolean type;
@@ -44,15 +44,12 @@ public class Account {
 	public Account() {
 	}
 
-	public Account(Integer idAccount, String wording, Float balance, String number, String openingDate, Integer idCheck,
-			Integer idCard, Boolean type) {
+	public Account(Integer idAccount, String wording, Float balance, String number, String openingDate, Boolean type) {
 		this.idAccount = idAccount;
 		this.wording = wording;
 		this.balance = balance;
 		this.number = number;
 		this.openingDate = openingDate;
-		this.idCheck = idCheck;
-		this.idCard = idCard;
 		this.type = type;
 	}
 
@@ -96,22 +93,6 @@ public class Account {
 		this.openingDate = openingDate;
 	}
 
-	public Integer getIdCheck() {
-		return idCheck;
-	}
-
-	public void setIdCheck(Integer idCheck) {
-		this.idCheck = idCheck;
-	}
-
-	public Integer getIdCard() {
-		return idCard;
-	}
-
-	public void setIdCard(Integer idCard) {
-		this.idCard = idCard;
-	}
-
 	public Boolean getType() {
 		return type;
 	}
@@ -119,4 +100,21 @@ public class Account {
 	public void setType(Boolean type) {
 		this.type = type;
 	}
+
+	public Check getCheck() {
+		return check;
+	}
+
+	public void setCheck(Check check) {
+		this.check = check;
+	}
+
+	public Card getCard() {
+		return card;
+	}
+
+	public void setCard(Card card) {
+		this.card = card;
+	}
+	
 }

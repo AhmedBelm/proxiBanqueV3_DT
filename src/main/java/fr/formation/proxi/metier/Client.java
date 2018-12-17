@@ -13,35 +13,44 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table (name="client")
+@Table(name = "client")
 public class Client {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private Integer idClient;
-	
+
 	@Column
 	private String number;
-	
+
 	@Column
 	private String firstname;
-	
+
 	@Column
 	private String lastname;
-	
+
 	@Column
 	private String birthDate;
-	
+
 	@OneToOne
-	@JoinColumn(name="idClient", referencedColumnName="idAddress")
+
+	@JoinColumn(name = "idAddress", referencedColumnName = "idAddress")
 	private Address address;
-	
+
 	@OneToMany
-	@JoinColumn(name="idClient", referencedColumnName="idClient")
+	@JoinColumn(name = "idClient")
 	private List<Account> accounts;
 
 	public Client() {
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	public Client(Integer idClient, String number, String firstname, String lastname, String birthDate,
@@ -92,14 +101,6 @@ public class Client {
 
 	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
-	}
-
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
 	}
 
 	public List<Account> getAccounts() {
