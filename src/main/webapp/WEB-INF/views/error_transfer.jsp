@@ -32,7 +32,7 @@
 <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/advisor.jsp"></jsp:include>
+
 	<section class="head"></section>
 	<h1 class="page-title">Erreur : impossible de faire un virement pour un client qui n'a aucun ou un seul compte.</h1>
 

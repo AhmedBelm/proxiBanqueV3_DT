@@ -44,7 +44,7 @@
 <!-- 				<button style="margin-top:30px"  class="button">Déconnexion</button> -->
 <!-- 			</a> -->
 <!-- 		</div> -->
-		<jsp:include page="/WEB-INF/views/advisor.jsp"></jsp:include>
+		
 		<div class="container">
 			<div class="intro-text"
 				style="padding-top: 100px; padding-bottom: 200px;">

@@ -35,7 +35,6 @@
 
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/advisor.jsp"></jsp:include>
 	<section class="head"></section>
 		<section class="account-body">
 			<div class="header-account">

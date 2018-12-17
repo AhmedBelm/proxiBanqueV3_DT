@@ -13,45 +13,52 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table (name="client")
+@Table(name = "client")
 public class Client {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private Integer idClient;
-	
+
 	@Column
 	private String number;
-	
+
 	@Column
 	private String firstname;
-	
+
 	@Column
 	private String lastname;
-	
+
 	@Column
 	private String birthDate;
-	
+
 	@OneToOne
-	@JoinColumn(name="idClient", referencedColumnName="idClient")
-	private Integer idAddress;
-	
+	@JoinColumn(name = "idAddress", referencedColumnName = "idAddress")
+	private Address address;
+
 	@OneToMany
-	@JoinColumn(name="idClient", referencedColumnName="idClient")
+	@JoinColumn(name = "idClient")
 	private List<Account> accounts;
 
 	public Client() {
 	}
 
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	public Client(Integer idClient, String number, String firstname, String lastname, String birthDate,
-			Integer idAddress, List<Account> accounts) {
+			List<Account> accounts) {
 		this.idClient = idClient;
 		this.number = number;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.birthDate = birthDate;
-		this.idAddress = idAddress;
 		this.accounts = accounts;
 	}
 
@@ -93,14 +100,6 @@ public class Client {
 
 	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
-	}
-
-	public Integer getIdAddress() {
-		return idAddress;
-	}
-
-	public void setIdAddress(Integer idAddress) {
-		this.idAddress = idAddress;
 	}
 
 	public List<Account> getAccounts() {

@@ -16,7 +16,7 @@ public class MySqlConnection {
 	
 	
 	public MySqlConnection() {
-		this.entityManagerFactory = Persistence.createEntityManagerFactory("proxiBanqueV3_DT");
+		this.entityManagerFactory = Persistence.createEntityManagerFactory("proxibanquev3");
 	}
 
 	public EntityManager getEntityManager() {
