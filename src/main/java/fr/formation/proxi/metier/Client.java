@@ -34,8 +34,8 @@ public class Client {
 	private String birthDate;
 	
 	@OneToOne
-	@JoinColumn(name="idClient", referencedColumnName="idClient")
-	private Integer idAddress;
+	@JoinColumn(name="idClient", referencedColumnName="idAddress")
+	private Address address;
 	
 	@OneToMany
 	@JoinColumn(name="idClient", referencedColumnName="idClient")
@@ -45,13 +45,12 @@ public class Client {
 	}
 
 	public Client(Integer idClient, String number, String firstname, String lastname, String birthDate,
-			Integer idAddress, List<Account> accounts) {
+			List<Account> accounts) {
 		this.idClient = idClient;
 		this.number = number;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.birthDate = birthDate;
-		this.idAddress = idAddress;
 		this.accounts = accounts;
 	}
 
@@ -95,12 +94,12 @@ public class Client {
 		this.birthDate = birthDate;
 	}
 
-	public Integer getIdAddress() {
-		return idAddress;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setIdAddress(Integer idAddress) {
-		this.idAddress = idAddress;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	public List<Account> getAccounts() {

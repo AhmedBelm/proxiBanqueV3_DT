@@ -1,5 +1,5 @@
 package fr.formation.proxi.metier;
 
-public class SavingsAccount {
+public class SavingsAccount extends Account {
 
 }

@@ -32,7 +32,6 @@
 		<link href="css/index.css" rel="stylesheet">
 	</head>
 	<body>
-		<jsp:include page="/WEB-INF/views/advisor.jsp"></jsp:include>
 		<section class="error-section">
 		</section>
 		<div>

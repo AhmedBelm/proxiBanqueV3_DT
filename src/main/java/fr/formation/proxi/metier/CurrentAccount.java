@@ -1,5 +1,5 @@
 package fr.formation.proxi.metier;
 
-public class CurrentAccount {
+public class CurrentAccount extends Account {
 
 }

@@ -32,7 +32,6 @@
 <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/advisor.jsp"></jsp:include>
 	<section class="head"></section>
 	<h1 class="page-title">Virement bancaire réussi. Vous pouvez revenir sur la page d'accueil.</h1>
 
