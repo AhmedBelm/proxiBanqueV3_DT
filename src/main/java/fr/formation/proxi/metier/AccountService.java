@@ -6,14 +6,21 @@ import java.util.List;
 import fr.formation.proxi.metier.AccountService;
 import fr.formation.proxi.metier.Account;
 import fr.formation.proxi.persistance.AccountDao;
+import fr.formation.proxi.persistance.CardDao;
+import fr.formation.proxi.persistance.CheckDao;
+import fr.formation.proxi.persistance.ClientDao;
 
 public class AccountService {
 
 	private static final AccountService INSTANCE = new AccountService();
 	
+	private AccountDao accountDao;
+	
 	private CardDao cardDao;
 	
 	private CheckDao checkDao;
+
+	private ClientDao clientDao;
 
 	public static AccountService getInstance() {
 		return AccountService.INSTANCE;

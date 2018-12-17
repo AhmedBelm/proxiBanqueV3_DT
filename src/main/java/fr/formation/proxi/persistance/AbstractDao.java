@@ -1,8 +1,10 @@
 package fr.formation.proxi.persistance;
 
+import javax.persistence.EntityManager;
+
 public abstract class AbstractDao<T> implements Dao<T>{
 
-	protected Entitymanager em;
+	protected EntityManager em;
 	
 	public AbstractDao() {
 		this.em = MySqlConnection.getInstance().getEntityManager();

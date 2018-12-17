@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 
-import fr.formation.proxi.metier.entity.Account;
+import fr.formation.proxi.metier.Account;
 
 public class AccountDao extends AbstractDao<Account> {
 
@@ -15,7 +15,7 @@ public class AccountDao extends AbstractDao<Account> {
 		return this.read(id, new Account());
 	}
 
-	public List<Account> readAll() {
+	public List<Account> readAll(Integer id) {
 		List<Account> clients = new ArrayList<>();
 		TypedQuery<Account> query = this.em.createQuery(JpqlQueries.READ_ALL_ACCOUNT, Account.class);
 		query.setParameter("idAccount", id);
@@ -25,5 +25,10 @@ public class AccountDao extends AbstractDao<Account> {
 
 	public static AccountDao getInstance() {
 		return AccountDao.INSTANCE;
+	}
+
+	@Override
+	public List<Account> readAll() {
+		return null;
 	}
 }

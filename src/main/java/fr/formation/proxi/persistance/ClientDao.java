@@ -11,7 +11,7 @@ public class ClientDao extends AbstractDao<Client> {
 	
 	private static final ClientDao INSTANCE = new ClientDao();
 	
-	@Override
+	
 	public Client read(Integer id) {
 		return INSTANCE.read(id);
 	}
@@ -26,5 +26,9 @@ public class ClientDao extends AbstractDao<Client> {
 	
 	public static ClientDao getInstance() {
 		return ClientDao.INSTANCE;
+	}
+
+	public List<Client> readAll() {
+		return null;
 	}
 }

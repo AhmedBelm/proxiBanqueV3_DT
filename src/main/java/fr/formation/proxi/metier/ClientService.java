@@ -3,7 +3,7 @@ package fr.formation.proxi.metier;
 import java.util.List;
 
 import fr.formation.proxi.metier.ClientService;
-import fr.formation.proxi.metier.entity.Client;
+import fr.formation.proxi.metier.Client;
 import fr.formation.proxi.persistance.AccountDao;
 import fr.formation.proxi.persistance.ClientDao;
 
@@ -15,6 +15,11 @@ public class ClientService {
 	
 	private AccountDao daoAccount;
 	
+	public ClientService(AccountDao daoAccount, ClientDao daoClient) {
+		this.daoClient = daoClient;
+		this.daoAccount = daoAccount;
+	}
+
 	public static ClientService getInstance() {
 		return ClientService.INSTANCE;
 	}
