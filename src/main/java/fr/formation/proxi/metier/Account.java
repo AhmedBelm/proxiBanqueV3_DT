@@ -1,6 +1,7 @@
 package fr.formation.proxi.metier;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table (name="account")
+@DiscriminatorColumn (name="type")
 public class Account {
 
 	@Id
@@ -34,23 +36,16 @@ public class Account {
 	@JoinColumn(name="idCheck", referencedColumnName="idCheck")
 	private Check check;
 	
-	@OneToOne
-	@JoinColumn(name="idCard", referencedColumnName="idCard")
-	private Card card;
-	
-	@Column
-	private Boolean type;
 
 	public Account() {
 	}
 
-	public Account(Integer idAccount, String wording, Float balance, String number, String openingDate, Boolean type) {
+	public Account(Integer idAccount, String wording, Float balance, String number, String openingDate) {
 		this.idAccount = idAccount;
 		this.wording = wording;
 		this.balance = balance;
 		this.number = number;
 		this.openingDate = openingDate;
-		this.type = type;
 	}
 
 	public Integer getIdAccount() {
@@ -93,13 +88,6 @@ public class Account {
 		this.openingDate = openingDate;
 	}
 
-	public Boolean getType() {
-		return type;
-	}
-
-	public void setType(Boolean type) {
-		this.type = type;
-	}
 
 	public Check getCheck() {
 		return check;
@@ -109,12 +97,6 @@ public class Account {
 		this.check = check;
 	}
 
-	public Card getCard() {
-		return card;
-	}
-
-	public void setCard(Card card) {
-		this.card = card;
-	}
+	
 	
 }

@@ -1,5 +1,8 @@
 package fr.formation.proxi.metier;
 
-public class SavingsAccount {
+import javax.persistence.DiscriminatorValue;
+
+@DiscriminatorValue ("saving")
+public class SavingsAccount extends Account {
 
 }

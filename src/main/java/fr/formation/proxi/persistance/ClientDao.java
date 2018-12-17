@@ -3,6 +3,7 @@ package fr.formation.proxi.persistance;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
 import fr.formation.proxi.metier.Client;
@@ -13,7 +14,7 @@ public class ClientDao extends AbstractDao<Client> {
 	
 	
 	public Client read(Integer id) {
-		return INSTANCE.read(id);
+		return this.read(id, new Client());
 	}
 
 	public List<Client> readAll(Integer id) {
@@ -31,4 +32,18 @@ public class ClientDao extends AbstractDao<Client> {
 	public List<Client> readAll() {
 		return null;
 	}
+
+	public Client check(String firstname , String lastname) {
+        Client client = new Client();
+        TypedQuery<Client> query = this.em
+                .createQuery(JpqlQueries.SELECT_CLIENT_BY_NAME, Client.class);
+        query.setParameter("firstname",firstname);
+        query.setParameter("lastname",lastname);
+            try {
+            	client = query.getSingleResult();
+			} catch (PersistenceException e) {
+				client = null;
+			}
+        return client;
+    }
 }

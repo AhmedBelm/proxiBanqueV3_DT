@@ -48,19 +48,19 @@
 			<div class="account-list">
 				<div class="left-list">
 				<h2>Liste des comptes courant </h2>
-				<c:if test="${empty currentAccounts}">
+				<c:if test="${empty CurrentAccounts}">
 				<h4> Aucun compte associé à ce client.</h4>
 				</c:if>
-				<c:if test="${not empty currentAccounts}">
+				<c:if test="${not empty CurrentAccounts}">
 					<table>
 					<tr>
 						<th> Numero de compte </th>
 						<th class="balance"> Solde en &#8364</th>
 					</tr>
-					<c:forEach var="currentAccount" items="${currentAccounts }">
+					<c:forEach var="current" items="${CurrentAccounts }">
 						<tr class="data">
-							<td>${currentAccount.number}</td>
-							<td class="balance">${currentAccount.balance}</td>
+							<td>${CurrentAccount.number}</td>
+							<td class="balance">${CurrentAccount.balance}</td>
 						</tr>
 					</c:forEach>
 					</table>
@@ -77,7 +77,7 @@
 						<th> Numero de compte </th>
 						<th class="balance"> Solde en &#8364</th>
 					</tr>
-						<c:forEach var="savingAccount" items="${savingAccounts }">
+						<c:forEach var="saving" items="${savingAccounts }">
 							<tr class="data">
 								<td>${savingAccount.number}</td>
 								<td class="balance">${savingAccount.balance}</td>

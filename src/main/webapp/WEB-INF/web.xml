@@ -26,13 +26,13 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>DashboardServlet</servlet-name>
-		<servlet-class>fr.formation.proxi.presentation.DashboardServlet</servlet-class>
+		<servlet-name>DashbordServlet</servlet-name>
+		<servlet-class>fr.formation.proxi.presentation.DashbordServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>DashboardServlet</servlet-name>
-		<url-pattern>/dashboard.html</url-pattern>
+		<servlet-name>DashbordServlet</servlet-name>
+		<url-pattern>/dashbord.html</url-pattern>
 	</servlet-mapping>
 
 <!-- 	<error-page> -->

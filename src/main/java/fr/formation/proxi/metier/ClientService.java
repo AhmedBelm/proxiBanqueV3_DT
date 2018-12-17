@@ -33,7 +33,10 @@ public class ClientService {
 	}
 
 	public Boolean transfer(Float val, Integer compteDebite, Integer compteCredite, Integer clientId) {
-		
 		return null;
 	}
+	
+	public Client check(String firstname , String lastname) {
+        return this.daoClient.check(firstname, lastname);
+    }
 }

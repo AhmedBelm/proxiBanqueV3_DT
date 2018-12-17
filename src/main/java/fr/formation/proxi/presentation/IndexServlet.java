@@ -1,16 +1,17 @@
 package fr.formation.proxi.presentation;
 
 import java.io.IOException;
-import java.util.List;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import fr.formation.proxi.metier.Client;
 import fr.formation.proxi.metier.ClientService;
+
+
 
 public class IndexServlet extends HttpServlet {
 	
@@ -24,10 +25,40 @@ public class IndexServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Client> clients = ClientService.getInstance().getAll();
-		req.setAttribute("clients", clients);
-		this.getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+		 this.getServletContext()
+	        .getRequestDispatcher("/index.jsp")
+	        .forward(req, resp);
 	}
+	
+	@Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        
+        String mot[] = req.getParameter("name").split(" ");
+        String lastname = mot[1];
+        String firstname = mot[0];
+        System.out.println(firstname + lastname);
+        Client client = ClientService.getInstance().check(firstname, lastname);
+        if ( client == null ) {
+            
+            this.getServletContext()
+            .getRequestDispatcher("/WEB-INF/views/error.jsp")
+            .forward(req, resp);
+            
+        } else {
+            Integer Id = client.getIdClient();
+            System.out.println(Id);
+            resp.sendRedirect(
+                    this.getServletContext().getContextPath() + "/dashbord.html?id="+Id);
+            
+        }
+        
+        
+        
+        //for (Client client : clients)
+        
+        
+    }
 
 
 }
