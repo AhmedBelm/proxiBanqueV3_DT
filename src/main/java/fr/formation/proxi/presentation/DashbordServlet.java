@@ -12,8 +12,8 @@ import org.apache.log4j.Logger;
 
 import fr.formation.proxi.metier.Account;
 import fr.formation.proxi.metier.Client;
-import fr.formation.proxi.metier.service.AccountService;
-import fr.formation.proxi.metier.service.ClientService;
+import fr.formation.proxi.metier.AccountService;
+import fr.formation.proxi.metier.ClientService;
 
 public class DashbordServlet extends HttpServlet {
 
