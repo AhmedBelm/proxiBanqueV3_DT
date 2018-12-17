@@ -31,4 +31,9 @@ public class ClientService {
 	public Client read(Integer id) {
 		return this.daoClient.read(id);
 	}
+
+	public Boolean transfer(Float val, Integer compteDebite, Integer compteCredite, Integer clientId) {
+		
+		return null;
+	}
 }
