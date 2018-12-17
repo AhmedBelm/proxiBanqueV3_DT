@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 
-import fr.formation.proxi.metier.entity.Client;
+import fr.formation.proxi.metier.Client;
 
 public class ClientDao extends AbstractDao<Client> {
 	
@@ -24,8 +24,7 @@ public class ClientDao extends AbstractDao<Client> {
 		return clients;
 	}
 	
-	@Override
-	public List<Client> readAll() {
-		return null;
+	public static ClientDao getInstance() {
+		return ClientDao.INSTANCE;
 	}
 }
