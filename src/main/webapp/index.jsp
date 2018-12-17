@@ -35,7 +35,6 @@
 </head>
 
 <body id="page-top">
-	
 	<header class="masthead">
 		<div class="container">
 			<div class="intro-text"

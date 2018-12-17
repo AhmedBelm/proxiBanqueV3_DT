@@ -24,6 +24,11 @@ public class AccountService {
 
 	private ClientDao clientDao;
 
+	public AccountService() {
+		this.accountDao = new AccountDao();
+		this.clientDao = new ClientDao();
+	}
+	
 	public static AccountService getInstance() {
 		return AccountService.INSTANCE;
 	}

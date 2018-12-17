@@ -1,9 +1,11 @@
 package fr.formation.proxi.metier;
 
 import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+@Entity
 @DiscriminatorValue ("current")
 public class CurrentAccount extends Account {
 
