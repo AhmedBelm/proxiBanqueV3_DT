@@ -32,7 +32,6 @@
 <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
-	
 	<section class="head"></section>
 	<h1 class="page-title">Virement bancaire réussi. Vous pouvez revenir sur la page d'accueil.</h1>
 

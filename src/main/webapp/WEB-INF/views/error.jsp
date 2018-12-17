@@ -32,7 +32,6 @@
 		<link href="css/index.css" rel="stylesheet">
 	</head>
 	<body>
-		
 		<section class="error-section">
 		</section>
 		<div>

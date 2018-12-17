@@ -35,7 +35,12 @@
 </head>
 
 <body id="page-top">
+	<div>
+		<label >nom prenom</label>
+		<input type="text">
+	</div>
 
+<<<<<<< HEAD
 	<!-- Header -->
 	<header class="masthead">
 		
@@ -402,6 +407,41 @@
 <!-- 				</div> -->
 <!-- 			</div> -->
 <!-- 		</section> -->
+=======
+
+	<section id="clients-display">
+		<h1 class="page-title">Liste de vos clients</h1>
+		<div class="client-display">
+			<c:forEach var="client" items="${clients}">
+				<div class="client-container">
+					<div class="client-contain">
+						<p class="name">${client.firstname} ${client.lastname}</p>
+						<p class="text">${client.email}</p>
+						<p class="text">${client.address}</p>
+						<div class="button-container">
+							<div>
+								<a href="modify.html?id=${client.id}">
+									<button class="button">Editer</button>
+								</a>
+							</div>
+							<div>
+								<a href="account.html?id=${client.id}">
+									<button class="button">Comptes</button>
+								</a>
+							</div>
+							<div>
+								<a href="transfer.html?id=${client.id}">
+									<button class="button">Virement</button>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</c:forEach>
+		</div>
+	</section>
+	<!-- 	<!-- Team -->
+>>>>>>> a3f60e9a9072ed91c8cdfdcbc58fea2d8d6417a5
 
 	<!-- Footer -->
 	<footer>

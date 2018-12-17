@@ -34,6 +34,7 @@ public class Client {
 	private String birthDate;
 
 	@OneToOne
+
 	@JoinColumn(name = "idAddress", referencedColumnName = "idAddress")
 	private Address address;
 

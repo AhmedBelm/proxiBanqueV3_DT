@@ -34,7 +34,6 @@
 <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
-	
 	<section class="head"></section>
 	
 	<section class="account-body">
