@@ -10,7 +10,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Outil de virement</title>
+<title>Outil de retrait</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,12 +37,12 @@
 	<section class="head"></section>
 	
 	<section class="account-body">
-		<c:if test="${not empty transferRate}">
-			<h1 class="page-title">Erreur : Le virement n'a pû être effectué correctement. Veuillez vous adressez à votre conseiller pour plus de renseignements.</h1>
+		<c:if test="${not empty withdrawRate}">
+			<h1 class="page-title">Erreur : Nous ne pouvons donner suite à votre retrait. Veuillez vous adressez à votre conseiller pour plus de renseignements.</h1>
 		</c:if>
 	
 		<c:if test="${fn:length(accounts) > 1}">
-		<h1 class="page-title">Transfert pour ${client.firstname} ${client.lastname }</h1>
+		<h1 class="page-title">Retrait pour ${client.firstname} ${client.lastname }</h1>
 			<div class="transfer-container">
 				<form method="post" action="">
 					
@@ -64,27 +64,9 @@
 								</c:forEach>
 							</table>
 						</div>
-						<div class="right-list">
-							<h2>Compte à créditer</h2>
-							<table>
-								<tr>
-									<th> Numéro de compte </th>
-									<th class="balance"> Solde en &#8364 </th>
-								</tr>
-								<c:forEach var="account" items="${accounts}">
-									<tr class="data">
-										<td>
-											<input type="radio" id="${account.idAccount + 100}" name="compteACrediter" value="${account.idAccount}">
-											<label for="${account.idAccount + 100}">n°${account.number}</label>
-										</td>
-										<td class="balance">${account.balance}</td>
-								</c:forEach>
-							</table>
-						</div>
-					</div>
-					<div class="centered-input">
+						<div class="centered-input">
 						<div>
-							<label for="value" class="text"> Montant du virement : </label> 
+							<label for="value" class="text"> Montant du retrait : </label> 
 							<input type="number" step=0.01 name="value" id="value" style="margin-left : 0.5em;">
 							<button style="margin-left : 2em;" class="button">Confirmer</button>
 						</div>

@@ -44,6 +44,11 @@
 						<button class="button">Faire un virement</button>
 					</a>
 				</div>
+				<div class="transfer-button">
+					<a href="withdrawMoney.html?id=${id}">
+						<button class="button">Faire un retrait</button>
+					</a>
+				</div>
 			</div>
 			<div class="account-list">
 				<div class="left-list">

@@ -8,7 +8,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Erreur transfer</title>
+<title>Retrait effectue</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,9 +33,9 @@
 </head>
 <body>
 	<section class="head"></section>
-	<h1 class="page-title">Erreur : impossible de faire un virement pour un client qui n'a aucun ou un seul compte.</h1>
+	<h1 class="page-title">Retrait bancaire réussi. Vous pouvez revenir sur la page d'accueil.</h1>
 
-	<div class="transfer-button">
+	<div class="withdraw-button">
 		<a href="dashbord.html?id=${clientId}">
 			<button class="button">Retour</button>
 		</a>

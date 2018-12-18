@@ -24,6 +24,16 @@
 		<servlet-name>TransferServlet</servlet-name>
 		<url-pattern>/transfer.html</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>WithdrawMoneyServlet</servlet-name>
+		<servlet-class>fr.formation.proxi.presentation.WithdrawMoneyServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>WithdrawMoneyServlet</servlet-name>
+		<url-pattern>/withdrawMoney.html</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>DashbordServlet</servlet-name>
