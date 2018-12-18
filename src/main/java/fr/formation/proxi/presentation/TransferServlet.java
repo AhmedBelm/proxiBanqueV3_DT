@@ -41,6 +41,7 @@ public class TransferServlet extends HttpServlet {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		Client client = ClientService.getInstance().read(id);
 		List<Account> accounts = this.accS.getAll(id);
+		req.setAttribute("clientId", id);
 		if (accounts.size() <= 1) {
 			req.setAttribute("client", client);
 			req.getServletContext().getRequestDispatcher("/WEB-INF/views/error_transfer.jsp").forward(req, resp);
@@ -59,18 +60,32 @@ public class TransferServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Integer compteCredite = Integer.parseInt(req.getParameter("compteACrediter"));
-        Integer compteDebite = Integer.parseInt(req.getParameter("compteADebiter"));
+    	String strCredite = req.getParameter("compteAcrediter");
+    	String strDebite = req.getParameter("compteADebiter");
+        
         Integer clientId = Integer.parseInt(req.getParameter("id"));
-        Float val = Float.parseFloat(req.getParameter("value"));
-
-        Boolean transferOK = ClientService.getInstance().transfer(val, compteDebite, compteCredite, clientId);
-
-        if (!transferOK) {
-            req.setAttribute("transferRate", transferOK);
-            this.getServletContext().getRequestDispatcher("/WEB-INF/views/transfer.jsp").forward(req, resp);
-        } else {
-            this.getServletContext().getRequestDispatcher("/WEB-INF/views/transfer_OK.jsp").forward(req, resp);
+        Client client = ClientService.getInstance().read(clientId);
+        
+        String strVal = req.getParameter("value");
+        req.setAttribute("clientId", clientId);
+        if (strVal == null || strVal.isEmpty()) {
+        	req.setAttribute("client", client);
+			req.getServletContext().getRequestDispatcher("/WEB-INF/views/error_saisie_value_transfer.jsp").forward(req, resp);
+        } else if (strCredite==null || strDebite==null){
+        		req.setAttribute("client", client);
+        		req.getServletContext().getRequestDispatcher("/WEB-INF/views/error_saisie_account_transfer.jsp").forward(req, resp);
+        	} else {
+        			Float val = Float.parseFloat(req.getParameter("value"));
+        			Integer compteCredite = Integer.parseInt(strCredite);
+        			Integer compteDebite = Integer.parseInt(strDebite);
+        			Boolean transferOK = ClientService.getInstance().transfer(val, compteDebite, compteCredite, clientId);
+        			if (!transferOK) {
+        				req.setAttribute("transferRate", transferOK);
+        				this.getServletContext().getRequestDispatcher("/WEB-INF/views/transfer.jsp").forward(req, resp);
+        			} else {
+        				this.getServletContext().getRequestDispatcher("/WEB-INF/views/transfer_OK.jsp").forward(req, resp);
+        	
+        	}
         }
     }
 

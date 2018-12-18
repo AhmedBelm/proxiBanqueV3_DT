@@ -100,6 +100,14 @@ header.masthead {
 }
 
 .transfer-button {
+	width: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.withdraw-button {
 	margin: 0 auto;
 	width: 250px;
 }

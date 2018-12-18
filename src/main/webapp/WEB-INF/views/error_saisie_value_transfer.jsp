@@ -33,10 +33,10 @@
 </head>
 <body>
 	<section class="head"></section>
-	<h1 class="page-title">Erreur : impossible de faire un virement pour un client qui n'a aucun ou un seul compte.</h1>
+	<h1 class="page-title">Erreur : veuillez vérifier le montant saisie.</h1>
 
 	<div class="transfer-button">
-		<a href="dashbord.html?id=${clientId}">
+		<a href="transfer.html?id=${clientId}">
 			<button class="button">Retour</button>
 		</a>
 	</div>

@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import fr.formation.proxi.metier.Account;
+
 @Entity
 @Table(name = "client")
 public class Client {
@@ -110,4 +112,15 @@ public class Client {
 	public void setAccounts(List<Account> accounts) {
 		this.accounts = accounts;
 	}
+	
+	public Account getAccountById(Integer searchId) {
+        Account result = null;
+        for (Account a : this.accounts) {
+            if (a.getIdAccount().equals(searchId)) {
+                result = a;
+                break;
+            }
+        }
+        return result;
+    }
 }

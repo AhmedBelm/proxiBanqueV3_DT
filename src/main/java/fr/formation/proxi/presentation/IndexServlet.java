@@ -25,7 +25,7 @@ public class IndexServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		 this.getServletContext()
+		this.getServletContext()
 	        .getRequestDispatcher("/index.jsp")
 	        .forward(req, resp);
 	}
@@ -48,9 +48,9 @@ public class IndexServlet extends HttpServlet {
         } else {
             Integer Id = client.getIdClient();
             System.out.println(Id);
+            req.setAttribute("clientId",Id);
             resp.sendRedirect(
                     this.getServletContext().getContextPath() + "/dashbord.html?id="+Id);
-            
         }
         
         

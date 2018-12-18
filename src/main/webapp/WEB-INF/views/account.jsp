@@ -36,19 +36,19 @@
 </head>
 <body>
 	<section class="head"></section>
-	<section class="account-body">
-		<div class="header-account">
-			<h1 class="page-title">Tableau de bord de ${client.firstname}
-				${client.lastname }</h1>
-			<div>
-				<h2 align="center">Adresse</h2>
-				<div align="center" class="data" items="${address}">${address.principal}</div>
-			</div>
-
-			<div style="margin-top: 30px" class="transfer-button">
-				<a href="transfer.html?id=${id}">
-					<button class="button">Faire un virement</button>
-				</a>
+		<section class="account-body">
+			<div class="header-account">
+				<h1 class="page-title">Liste des comptes de ${client.firstname} ${client.lastname }</h1>
+				<div class="transfer-button">
+					<a href="transfer.html?id=${id}">
+						<button class="button">Faire un virement</button>
+					</a>
+				</div>
+				<div class="transfer-button">
+					<a href="withdrawMoney.html?id=${id}">
+						<button class="button">Faire un retrait</button>
+					</a>
+				</div>
 			</div>
 		</div>
 		<div class="account-list">
