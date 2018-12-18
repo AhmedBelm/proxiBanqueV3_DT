@@ -14,36 +14,65 @@ import javax.persistence.Table;
 
 import fr.formation.proxi.metier.Account;
 
+/**
+ * Classe représentant le client
+ * 
+ * @author Ahmed & Sidney
+ *
+ */
 @Entity
 @Table(name = "client")
 public class Client {
 
+	/**
+	 * Identifiant du client dans la base de donnée
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private Integer idClient;
 
+	/**
+	 * Numéro du client
+	 */
 	@Column
 	private String number;
 
+	/**
+	 * Prénom du client
+	 */
 	@Column
 	private String firstname;
 
+	/**
+	 * Nom du client
+	 */
 	@Column
 	private String lastname;
 
+	/**
+	 * Date de naissance du client
+	 */
 	@Column
 	private String birthDate;
 
+	/**
+	 * Adresse du client
+	 */
 	@OneToOne
-
 	@JoinColumn(name = "idAddress", referencedColumnName = "idAddress")
 	private Address address;
 
+	/**
+	 * Liste des comptes du client
+	 */
 	@OneToMany
 	@JoinColumn(name = "idClient")
 	private List<Account> accounts;
 
+	/**
+	 * constructeur sans attribut
+	 */
 	public Client() {
 	}
 
@@ -55,6 +84,16 @@ public class Client {
 		this.address = address;
 	}
 
+	/**
+	 * Constructeur avec attributs
+	 * 
+	 * @param idClient
+	 * @param birthDate
+	 * @param firstname
+	 * @param lastname
+	 * @param number
+	 * @param accounts
+	 */
 	public Client(Integer idClient, String birthDate, String firstname, String lastname, String number,
 			List<Account> accounts) {
 		this.idClient = idClient;
@@ -113,6 +152,12 @@ public class Client {
 		this.accounts = accounts;
 	}
 	
+	/**
+	 * Méthode permettant de recupérer les comptes grace à l'Id du client
+	 * 
+	 * @param searchId
+	 * @return
+	 */
 	public Account getAccountById(Integer searchId) {
         Account result = null;
         for (Account a : this.accounts) {

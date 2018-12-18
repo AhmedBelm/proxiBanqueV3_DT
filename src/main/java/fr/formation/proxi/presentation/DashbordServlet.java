@@ -15,6 +15,12 @@ import fr.formation.proxi.metier.Client;
 import fr.formation.proxi.metier.AccountService;
 import fr.formation.proxi.metier.ClientService;
 
+/**
+ * Classe qui gère les relation entre la page web du tableau de bord et les différents comptes
+ * 
+ * @author Ahmed & Sidney
+ *
+ */
 public class DashbordServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;

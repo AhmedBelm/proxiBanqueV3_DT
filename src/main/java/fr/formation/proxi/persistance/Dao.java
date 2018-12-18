@@ -3,7 +3,7 @@ package fr.formation.proxi.persistance;
 import java.util.List;
 
 /**
- * Definition d'une interface comportant les 4 m�thodes elementaires de
+ * Definition d'une interface comportant les 4 méthodes élémentaires de
  * manipulation de donnees CRUD + readALL.
  * 
  * @param <T> classe qui represente le type de donnees manipule par le DAO.

@@ -14,6 +14,12 @@ import fr.formation.proxi.persistance.CheckDao;
 import fr.formation.proxi.persistance.ClientDao;
 import fr.formation.proxi.presentation.AddCardServlet;
 
+/**
+ * Clsse regroupant les méthodes de manipulation des comptes
+ * 
+ * @author Ahmed & Sidney
+ *
+ */
 public class AccountService {
 
 	private static final AccountService INSTANCE = new AccountService();
@@ -31,10 +37,21 @@ public class AccountService {
 		this.clientDao = new ClientDao();
 	}
 
+	/**
+	 * instanciation du singleton
+	 * 
+	 * @return
+	 */
 	public static AccountService getInstance() {
 		return AccountService.INSTANCE;
 	}
 
+	/**
+	 * Méthode permettant de récupérer laliste des comptesd d'un client défini
+	 * 
+	 * @param idClient
+	 * @return
+	 */
 	public List<Account> getAll(Integer idClient) {
 		List<Account> accounts = new ArrayList<>();
 
@@ -43,6 +60,12 @@ public class AccountService {
 		return accounts;
 	}
 
+	/**
+	 * Méthode permettant d'afficher les comptes épargnes
+	 * 
+	 * @param idClient
+	 * @return
+	 */
 	public List<Account> getAllSavingAccounts(Integer idClient) {
 		List<Account> SavingAccounts = new ArrayList<>();
 
@@ -57,6 +80,12 @@ public class AccountService {
 		return SavingAccounts;
 	}
 
+	/**
+	 * Méthode permettant d'afficher les comptes courrants
+	 * 
+	 * @param idClient
+	 * @return
+	 */
 	public List<Account> getAllCurrentAccounts(Integer idClient) {
 		List<Account> CurrentAccounts = new ArrayList<>();
 
@@ -71,10 +100,22 @@ public class AccountService {
 		return CurrentAccounts;
 	}
 
+	/**
+	 * 
+	 * 
+	 * @return
+	 */
 	public AccountDao getDao() {
 		return this.accountDao;
 	}
 	
+	/**
+	 * Méthode permettant de créer une nouvelle carte en fonction de l'id du compte et de son type
+	 * 
+	 * @param idAccount
+	 * @param type
+	 * @return
+	 */
 	public boolean newCard(Integer idAccount, String type) {
         boolean result = true;
         CurrentAccount account = (CurrentAccount) this.accountDao.read(idAccount);

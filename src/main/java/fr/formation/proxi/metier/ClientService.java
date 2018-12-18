@@ -8,6 +8,13 @@ import fr.formation.proxi.metier.Client;
 import fr.formation.proxi.persistance.AccountDao;
 import fr.formation.proxi.persistance.ClientDao;
 
+/**
+ * Classe regroupant les méthodes de manpulation des clients.
+ * Respecte le design pattern singleton.
+ * 
+ * @author Ahmed & Sidney
+ *
+ */
 public class ClientService {
 
 	private static final ClientService INSTANCE = new ClientService(AccountDao.getInstance(), ClientDao.getInstance());
@@ -21,10 +28,20 @@ public class ClientService {
 		this.daoAccount = daoAccount;
 	}
 
+	/**
+	 * Retourne le singleton de la classe.
+	 * 
+	 * @return Le singleton.
+	 */
 	public static ClientService getInstance() {
 		return ClientService.INSTANCE;
 	}
 	
+	/**
+	 * Recupère la liste de tous les clients suivis par le conseiller.
+	 * 
+	 * @return La liste des clients du conseiller.
+	 */
 	public List<Client> getAll() {
 		return this.daoClient.readAll();
 	}
@@ -33,6 +50,17 @@ public class ClientService {
 		return this.daoClient.read(id);
 	}
 
+	/**
+	 * Permet de faire un virement entre deux comptes d'un m�me client. Cette
+	 * méthode ne fait pas de virement intra-compte ni de virement qui rendrait le
+	 * compte débit� en solde n�gatif.
+	 * 
+	 * @param value         Le montant du virement � effectuer.
+	 * @param compteDebite  Le compte � d�biter.
+	 * @param compteCredite Le compte � cr�diter
+	 * @return False si le virement aurait rendu le compte d�bit� en solde n�gatif.
+	 *         True sinon.
+	 */
 	public boolean transfer(Float value, Integer debitId, Integer creditId,
             Integer clientId) {
         boolean transferOK = true;
@@ -58,10 +86,26 @@ public class ClientService {
         }
     }
 	
+	
+	/**
+	 * Permet de retourner le chequier d'un client
+	 * 
+	 * @param firstname
+	 * @param lastname
+	 * @return
+	 */
 	public Client check(String firstname , String lastname) {
         return this.daoClient.check(firstname, lastname);
     }
 
+	/**
+	 * Permet d'effectuer un retrait d'argent à hauteur de 300€
+	 * 
+	 * @param value
+	 * @param debitId
+	 * @param clientId
+	 * @return
+	 */
 	public Boolean withdraw(Float value, Integer debitId, Integer clientId) {
 		boolean withdrawOK = true;
 		Client client = this.daoClient.read(clientId);
