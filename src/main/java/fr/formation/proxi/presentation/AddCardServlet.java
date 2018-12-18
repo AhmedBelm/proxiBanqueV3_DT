@@ -25,16 +25,16 @@ public class AddCardServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		Integer idAccount = req.getParameter("idAccount");
+		Integer idAccount = Integer.parseInt(req.getParameter("idAccount"));
 		String type = req.getParameter("typeDeCarte");
-//		Boolean cardOK = AccountService.getInstance().newCard(idAccount, type);
+		Boolean cardOK = AccountService.getInstance().newCard(idAccount, type);
 		
-//		if (!cardOK) {
+		if (!cardOK) {
 			req.setAttribute("idAccount", type);
 			this.getServletContext().getRequestDispatcher("/WEB-INF/views/newcard.jsp").forward(req, resp);
-//		} else {
-//			this.getServletContext().getRequestDispatcher("WEB-INF/views/cardOK.jsp").forward(req, resp);
+		} else {
+			this.getServletContext().getRequestDispatcher("WEB-INF/views/cardOK.jsp").forward(req, resp);
 		}
 		
-//	}
+	}
 }

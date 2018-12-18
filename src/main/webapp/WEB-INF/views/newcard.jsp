@@ -31,6 +31,55 @@
 <link href="css/agency.min.css" rel="stylesheet">
 <link href="css/index.css" rel="stylesheet">
 <body>
+
+	<section class="head"></section>
+	
+	<section class="account-body">
+		<c:if test="${not empty idAccount}">
+			<h1 class="page-title">Erreur : Nous ne pouvons donner suite à votre commande. Veuillez vous adressez à votre conseiller pour plus de renseignements.</h1>
+		</c:if>
+	
+		<c:if test="">
+		<h1 class="page-title">Commande de carte pour ${client.firstname} ${client.lastname }</h1>
+			<div class="transfer-container">
+				<form method="post" action="">
+					
+					<div class ="account-list">
+						<div class="left-list">
+							<h2>Liste des comptes courrants</h2>
+							<table>
+								<tr>
+									<th> Numéro de compte </th>
+									<th class="balance"> Solde en &#8364 </th>
+								</tr>
+								<c:forEach var="currentAccount" items="${currentAaccounts}">
+									<tr class="data">
+										<td>
+											<input type="radio" id="${account.idAccount}" name="compteADebiter" value="${account.idAccount}">
+											<label for="${account.idAccount}">n°${account.number}</label>
+										</td>
+										<td class="balance">${account.balance}</td>
+								</c:forEach>
+							</table>
+						</div>
+						<div class="centered-input">
+						<div>
+							<label for="value" class="text"> Montant du retrait : </label> 
+							<input type="number" step=0.01 name="value" id="value" style="margin-left : 0.5em;">
+							<button style="margin-left : 2em;" class="button">Confirmer</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</c:if>
+		<div class="footer-button">
+			<a href="dashbord.html?id=${clientId}">
+				<button class="button">Retour</button>
+			</a>
+		</div>
+	</section>
+	
+	
 	<div>
 		<form method="post" action="">
 			<div>

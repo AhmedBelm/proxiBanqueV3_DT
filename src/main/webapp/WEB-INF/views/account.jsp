@@ -36,19 +36,23 @@
 </head>
 <body>
 	<section class="head"></section>
-		<section class="account-body">
-			<div class="header-account">
-				<h1 class="page-title">Liste des comptes de ${client.firstname} ${client.lastname }</h1>
-				<div class="transfer-button">
-					<a href="transfer.html?id=${id}">
-						<button class="button">Faire un virement</button>
-					</a>
-				</div>
-				<div class="transfer-button">
-					<a href="withdrawMoney.html?id=${id}">
-						<button class="button">Faire un retrait</button>
-					</a>
-				</div>
+	<section class="account-body">
+		<div class="header-account">
+			<h1 class="page-title">Liste des comptes de ${client.firstname}
+				${client.lastname }</h1>
+			<div class="transfer-button">
+				<a href="transfer.html?id=${id}">
+					<button style="margin-top:20px" style="margin: auto" class="button">Faire un virement</button>
+				</a>
+				<a href="card.html?id=${id}">
+					<button style="margin-top:20px" class="button">Commander une carte</button>
+				</a>
+				<a href="check.html?id=${id}">
+					<button style="margin-top:20px" class="button">Commander un chéquier</button>
+				</a>
+				<a href="withdrawMoney.html?id=${id}">
+					<button style="margin-top:20px" class="button">Faire un retrait</button>
+				</a>
 			</div>
 		</div>
 		<div class="account-list">
@@ -71,16 +75,7 @@
 						</c:forEach>
 					</table>
 				</c:if>
-				<div style="margin-top: 30px" class="card-button">
-					<a href="card.html?id=${id}">
-						<button class="button">Commander une carte</button>
-					</a>
-				</div>
-				<div style="margin-top: 30px" class="card-button">
-					<a href="check.html?id=${id}">
-						<button class="button">Commander un chéquier</button>
-					</a>
-				</div>
+				<div style="margin-top: 30px" class="card-button"></div>
 			</div>
 			<div class="right-list">
 				<h2>Liste des comptes epargne</h2>
@@ -101,11 +96,6 @@
 						</c:forEach>
 					</table>
 				</c:if>
-				<div style="margin-top: 30px" class="card-button">
-					<a href="check.html?id=${id}">
-						<button class="button">Commander un chéquier</button>
-					</a>
-				</div>
 			</div>
 		</div>
 		<div class="footer-button">
