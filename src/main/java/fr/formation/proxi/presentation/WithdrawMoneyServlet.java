@@ -13,6 +13,12 @@ import fr.formation.proxi.metier.AccountService;
 import fr.formation.proxi.metier.Client;
 import fr.formation.proxi.metier.ClientService;
 
+/**
+ * Classe héritant de HttpServlet et utilisant doGet() et doPost.
+ * 
+ * @author Ahmed & Sidney
+ *
+ */
 public class WithdrawMoneyServlet extends HttpServlet {
 
 	/**
@@ -52,6 +58,7 @@ public class WithdrawMoneyServlet extends HttpServlet {
 
         if (!withdrawOK) {
             req.setAttribute("withdrawRate", withdrawOK);
+            req.setAttribute("clientId", clientId);
             this.getServletContext().getRequestDispatcher("/WEB-INF/views/withdrawMoney.jsp").forward(req, resp);
         } else {
         	req.setAttribute("clientId", clientId);

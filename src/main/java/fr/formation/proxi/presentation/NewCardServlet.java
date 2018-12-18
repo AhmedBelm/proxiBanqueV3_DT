@@ -10,17 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.formation.proxi.metier.Account;
 import fr.formation.proxi.metier.AccountService;
-import fr.formation.proxi.metier.Card;
 import fr.formation.proxi.metier.Client;
 import fr.formation.proxi.metier.ClientService;
 
+/**
+ * Classe héritant de HttpServlet et utilisant doGet() et doPost.
+ * 
+ * @author Ahmed & Sidney
+ *
+ */
 public class NewCardServlet extends HttpServlet{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-	private AccountService accS = AccountService.getInstance();
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

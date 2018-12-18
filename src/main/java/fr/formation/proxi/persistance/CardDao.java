@@ -5,12 +5,11 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 
-
 import fr.formation.proxi.metier.Card;
 
 /**
- * Classe regroupant les méthodes à efffectuer sur les cartes.
- * Respecte le Design Paterne Dao.
+ * Classe regroupant les méthodes à efffectuer sur les cartes. Respecte le
+ * Design Paterne Dao.
  * 
  * @author Ahmed & Sidney
  *
@@ -18,7 +17,7 @@ import fr.formation.proxi.metier.Card;
 public class CardDao extends AbstractDao<Card> {
 
 	private static final CardDao INSTANCE = new CardDao();
-	
+
 	/**
 	 * {@inheritDoc} <br>
 	 * <br>
@@ -27,7 +26,7 @@ public class CardDao extends AbstractDao<Card> {
 	public Card read(Integer id) {
 		return this.read(id, new Card());
 	}
-	
+
 	/**
 	 * {@inheritDoc} <br>
 	 * <br>
@@ -39,7 +38,7 @@ public class CardDao extends AbstractDao<Card> {
 		accounts.addAll(query.getResultList());
 		return accounts;
 	}
-	
+
 	public static CardDao getInstance() {
 		return CardDao.INSTANCE;
 	}
@@ -49,5 +48,4 @@ public class CardDao extends AbstractDao<Card> {
 		return null;
 	}
 
-	
 }

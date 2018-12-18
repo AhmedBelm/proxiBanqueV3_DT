@@ -79,10 +79,6 @@
 						</c:forEach>
 					</table>
 				</c:if>
-<<<<<<< HEAD
-=======
-				<div style="margin-top: 30px" class="card-button"></div>
->>>>>>> f20ee8b761eb54a2729c5f25567efe5225f2328f
 			</div>
 			<div class="right-list">
 				<h2>Liste des comptes epargne</h2>
@@ -94,11 +90,13 @@
 						<tr>
 							<th>Numero de compte</th>
 							<th class="balance">Solde en &#8364</th>
+							<th></th>
 						</tr>
 						<c:forEach var="saving" items="${savingAccounts }">
 							<tr class="data">
 								<td>${saving.number}</td>
 								<td class="balance">${saving.balance}</td>
+								<td><button class="button" style="align:right" id= "${savingAccounts}">Retrait chéquier</button></td>
 							</tr>
 						</c:forEach>
 					</table>
