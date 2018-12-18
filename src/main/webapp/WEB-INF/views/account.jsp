@@ -49,6 +49,11 @@
 						<button class="button">Faire un retrait</button>
 					</a>
 				</div>
+				<div class="transfer-button">
+					<a href="card.html?id=${id}">
+						<button class="button">Commander une card</button>
+					</a>
+				</div>
 			</div>
 			<div class="account-list">
 				<div class="left-list">
@@ -61,11 +66,13 @@
 					<tr>
 						<th> Numero de compte </th>
 						<th class="balance"> Solde en &#8364</th>
+						<th></th>
 					</tr>
 					<c:forEach var="currentAccount" items="${currentAccounts}">
 						<tr class="data">
 							<td>${currentAccount.number}</td>
 							<td class="balance">${currentAccount.balance}</td>
+							<td><button class="button" style="align:right" id= "${currentAccounts}">Retrait chéquier</button></td>
 						</tr>
 					</c:forEach>
 					</table>
@@ -98,22 +105,5 @@
 				</a>
 			</div>
 		</section>
-		
-		<!-- Footer -->
-<!-- 	<footer> -->
-<!-- 		<div class="container"> -->
-<!-- 			<div class="row"> -->
-<!-- 				<div class="col-md-4"> -->
-<!-- 					<span class="copyright">Copyright &copy; Proxibanque 2018</span> -->
-<!-- 				</div> -->
-<!-- 				<div class="col-md-4"> -->
-<!-- 					<ul class="list-inline quicklinks"> -->
-<!-- 						<li class="list-inline-item"><a href="#">Privacy Policy</a></li> -->
-<!-- 						<li class="list-inline-item"><a href="#">Terms of Use</a></li> -->
-<!-- 					</ul> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 	</footer> -->
 </body>
 </html>

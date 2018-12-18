@@ -4,8 +4,6 @@ import java.util.List;
 
 import fr.formation.proxi.metier.ClientService;
 import fr.formation.proxi.metier.Account;
-import fr.formation.proxi.metier.CurrentAccount;
-import fr.formation.proxi.metier.SavingsAccount;
 import fr.formation.proxi.metier.Client;
 import fr.formation.proxi.persistance.AccountDao;
 import fr.formation.proxi.persistance.ClientDao;
@@ -79,4 +77,5 @@ public class ClientService {
 		}
 		return withdrawOK;
 	}
+	
 }

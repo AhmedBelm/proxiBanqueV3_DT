@@ -1,5 +1,6 @@
 package fr.formation.proxi.metier;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,4 +73,18 @@ public class AccountService {
 	public AccountDao getDao() {
 		return this.accountDao;
 	}
+	
+	public boolean newCard(Integer idAccount, String type) {
+        boolean result = true;
+        CurrentAccount account = (CurrentAccount) this.accountDao.read(idAccount);
+        if (account.getCard() != null) {
+            if (account.getCard().getExpDate().isBefore(LocalDate.now())) {
+                account.getCard().getIdCard();
+                account.setCard(null);
+            } else {
+                result = false;
+            }
+        }
+        return result;
+    }
 }

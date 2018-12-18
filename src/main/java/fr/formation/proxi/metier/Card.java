@@ -22,15 +22,20 @@ public class Card {
 	private String number;
 		
 	@Column
-	private Boolean type;
+	private String type;
 	
 	@Column
 	private LocalDate expDate;
 
 	public Card() {
 	}
+	
+	public Card(Integer idCard, String type) {
+		this.idCard = idCard;
+		this.type = type;
+	}
 
-	public Card(Integer idCard, String number, Boolean type, LocalDate expDate) {
+	public Card(Integer idCard, String number, String type, LocalDate expDate) {
 		this.idCard = idCard;
 		this.number = number;
 		this.type = type;
@@ -53,11 +58,11 @@ public class Card {
 		this.number = number;
 	}
 
-	public Boolean getType() {
+	public String getType() {
 		return type;
 	}
 
-	public void setType(Boolean type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 
