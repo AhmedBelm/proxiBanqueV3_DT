@@ -18,11 +18,10 @@ public class CardDao extends AbstractDao<Card> {
 	}
 	
 	public List<Card> readAll(Integer id) {
-		List<Card> cards = new ArrayList<>();
+		List<Card> accounts = new ArrayList<>();
 		TypedQuery<Card> query = this.em.createQuery(JpqlQueries.READ_ALL_CARD, Card.class);
-		query.setParameter("idCard", id);
-		cards.addAll(query.getResultList());
-		return cards;
+		accounts.addAll(query.getResultList());
+		return accounts;
 	}
 	
 	public static CardDao getInstance() {

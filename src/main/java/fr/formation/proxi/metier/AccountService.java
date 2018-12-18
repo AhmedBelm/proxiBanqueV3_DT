@@ -12,15 +12,16 @@ import fr.formation.proxi.persistance.AccountDao;
 import fr.formation.proxi.persistance.CardDao;
 import fr.formation.proxi.persistance.CheckDao;
 import fr.formation.proxi.persistance.ClientDao;
+import fr.formation.proxi.presentation.AddCardServlet;
 
 public class AccountService {
 
 	private static final AccountService INSTANCE = new AccountService();
-	
+
 	private AccountDao accountDao;
-	
+
 	private CardDao cardDao;
-	
+
 	private CheckDao checkDao;
 
 	private ClientDao clientDao;
@@ -29,11 +30,11 @@ public class AccountService {
 		this.accountDao = new AccountDao();
 		this.clientDao = new ClientDao();
 	}
-	
+
 	public static AccountService getInstance() {
 		return AccountService.INSTANCE;
 	}
-	
+
 	public List<Account> getAll(Integer idClient) {
 		List<Account> accounts = new ArrayList<>();
 
@@ -53,7 +54,8 @@ public class AccountService {
 				SavingAccounts.add(account);
 			}
 		}
-		return SavingAccounts;	}
+		return SavingAccounts;
+	}
 
 	public List<Account> getAllCurrentAccounts(Integer idClient) {
 		List<Account> CurrentAccounts = new ArrayList<>();
@@ -69,7 +71,6 @@ public class AccountService {
 		return CurrentAccounts;
 	}
 
-	
 	public AccountDao getDao() {
 		return this.accountDao;
 	}

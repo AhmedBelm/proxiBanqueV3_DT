@@ -55,11 +55,12 @@
 					</a>
 				</div>
 			</div>
-			<div class="account-list">
-				<div class="left-list">
-				<h2>Liste des comptes courant </h2>
+		</div>
+		<div class="account-list">
+			<div class="left-list">
+				<h2>Liste des comptes courant</h2>
 				<c:if test="${empty currentAccounts}">
-				<h4> Aucun compte associé à ce client.</h4>
+					<h4>Aucun compte associé à ce client.</h4>
 				</c:if>
 				<c:if test="${not empty currentAccounts}">
 					<table>
@@ -74,21 +75,32 @@
 							<td class="balance">${currentAccount.balance}</td>
 							<td><button class="button" style="align:right" id= "${currentAccounts}">Retrait chéquier</button></td>
 						</tr>
-					</c:forEach>
+						
+						</c:forEach>
 					</table>
-					</c:if>
+				</c:if>
+				<div style="margin-top: 30px" class="card-button">
+					<a href="card.html?id=${id}">
+						<button class="button">Commander une carte</button>
+					</a>
 				</div>
-				<div class="right-list">
-					<h2>Liste des comptes epargne</h2>
-					<c:if test="${empty savingAccounts}">
-					<h4> Aucun compte associé à ce client.</h4>
-					</c:if>
-					<c:if test="${not empty savingAccounts}">
+				<div style="margin-top: 30px" class="card-button">
+					<a href="check.html?id=${id}">
+						<button class="button">Commander un chéquier</button>
+					</a>
+				</div>
+			</div>
+			<div class="right-list">
+				<h2>Liste des comptes epargne</h2>
+				<c:if test="${empty savingAccounts}">
+					<h4>Aucun compte associé à ce client.</h4>
+				</c:if>
+				<c:if test="${not empty savingAccounts}">
 					<table>
-					<tr>
-						<th> Numero de compte </th>
-						<th class="balance"> Solde en &#8364</th>
-					</tr>
+						<tr>
+							<th>Numero de compte</th>
+							<th class="balance">Solde en &#8364</th>
+						</tr>
 						<c:forEach var="saving" items="${savingAccounts }">
 							<tr class="data">
 								<td>${saving.number}</td>
@@ -96,7 +108,11 @@
 							</tr>
 						</c:forEach>
 					</table>
-					</c:if>
+				</c:if>
+				<div style="margin-top: 30px" class="card-button">
+					<a href="check.html?id=${id}">
+						<button class="button">Commander un chéquier</button>
+					</a>
 				</div>
 			</div>
 			<div class="footer-button">
