@@ -36,23 +36,24 @@
 </head>
 <body>
 	<section class="head"></section>
-	<section class="account-body">
-		<div class="header-account">
-			<h1 class="page-title">Liste des comptes de ${client.firstname}
-				${client.lastname }</h1>
-			<div class="transfer-button">
-				<a href="transfer.html?id=${id}">
-					<button style="margin-top:20px" style="margin: auto" class="button">Faire un virement</button>
-				</a>
-				<a href="card.html?id=${id}">
-					<button style="margin-top:20px" class="button">Commander une carte</button>
-				</a>
-				<a href="check.html?id=${id}">
-					<button style="margin-top:20px" class="button">Commander un chéquier</button>
-				</a>
-				<a href="withdrawMoney.html?id=${id}">
-					<button style="margin-top:20px" class="button">Faire un retrait</button>
-				</a>
+		<section class="account-body">
+			<div class="header-account">
+				<h1 class="page-title">Liste des comptes de ${client.firstname} ${client.lastname }</h1>
+				<div class="transfer-button">
+					<a href="transfer.html?id=${id}">
+						<button class="button">Faire un virement</button>
+					</a>
+				</div>
+				<div class="transfer-button">
+					<a href="withdrawMoney.html?id=${id}">
+						<button class="button">Faire un retrait</button>
+					</a>
+				</div>
+				<div class="transfer-button">
+					<a href="card.html?id=${id}">
+						<button class="button">Commander une card</button>
+					</a>
+				</div>
 			</div>
 		</div>
 		<div class="account-list">
@@ -63,15 +64,18 @@
 				</c:if>
 				<c:if test="${not empty currentAccounts}">
 					<table>
-						<tr>
-							<th>Numero de compte</th>
-							<th class="balance">Solde en &#8364</th>
+					<tr>
+						<th> Numero de compte </th>
+						<th class="balance"> Solde en &#8364</th>
+						<th></th>
+					</tr>
+					<c:forEach var="currentAccount" items="${currentAccounts}">
+						<tr class="data">
+							<td>${currentAccount.number}</td>
+							<td class="balance">${currentAccount.balance}</td>
+							<td><button class="button" style="align:right" id= "${currentAccounts}">Retrait chéquier</button></td>
 						</tr>
-						<c:forEach var="currentAccount" items="${currentAccounts}">
-							<tr class="data">
-								<td>${currentAccount.number}</td>
-								<td class="balance">${currentAccount.balance}</td>
-							</tr>
+						
 						</c:forEach>
 					</table>
 				</c:if>
@@ -97,29 +101,11 @@
 					</table>
 				</c:if>
 			</div>
-		</div>
-		<div class="footer-button">
-			<a href="index.html">
-				<button class="button">Retour à l'accueil</button>
-			</a>
-		</div>
-	</section>
-
-	<!-- Footer -->
-	<!-- 	<footer> -->
-	<!-- 		<div class="container"> -->
-	<!-- 			<div class="row"> -->
-	<!-- 				<div class="col-md-4"> -->
-	<!-- 					<span class="copyright">Copyright &copy; Proxibanque 2018</span> -->
-	<!-- 				</div> -->
-	<!-- 				<div class="col-md-4"> -->
-	<!-- 					<ul class="list-inline quicklinks"> -->
-	<!-- 						<li class="list-inline-item"><a href="#">Privacy Policy</a></li> -->
-	<!-- 						<li class="list-inline-item"><a href="#">Terms of Use</a></li> -->
-	<!-- 					</ul> -->
-	<!-- 				</div> -->
-	<!-- 			</div> -->
-	<!-- 		</div> -->
-	<!-- 	</footer> -->
+			<div class="footer-button">
+				<a href="index.html">
+					<button class="button">Retour à l'accueil</button>
+				</a>
+			</div>
+		</section>
 </body>
 </html>

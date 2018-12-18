@@ -29,6 +29,11 @@ public class Card {
 
 	public Card() {
 	}
+	
+	public Card(Integer idCard, String type) {
+		this.idCard = idCard;
+		this.type = type;
+	}
 
 	public Card(Integer idCard, String number, String type, LocalDate expDate) {
 		this.idCard = idCard;

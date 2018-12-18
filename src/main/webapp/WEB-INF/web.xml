@@ -45,14 +45,14 @@
 		<url-pattern>/dashbord.html</url-pattern>
 	</servlet-mapping>
 	
-	
+
 	<servlet>
-		<servlet-name>CardServlet</servlet-name>
-		<servlet-class>fr.formation.proxi.presentation.AddCardServlet</servlet-class>
+		<servlet-name>NewCardServlet</servlet-name>
+		<servlet-class>fr.formation.proxi.presentation.NewCardServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>CardServlet</servlet-name>
+		<servlet-name>NewCardServlet</servlet-name>
 		<url-pattern>/card.html</url-pattern>
 	</servlet-mapping>
 
