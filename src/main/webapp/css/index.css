@@ -30,17 +30,19 @@ header.masthead {
 }
 
 .button-container {
-	display: flex;
+	display: center;
 	flex-direction: row;
 	justify-content: space-around;
-	margin-top: 0.5em;
+	margin-top: 10px;
 }
 
 .button {
+	style: center;
+	display: center;
 	margin-top: 0em;
 	margin-bottom: 0em;
-	margin-left: 0em;
-	margin-right: 1em;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 0.5em;
 	
 	background-color: #212529;

@@ -10,36 +10,65 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * Classe représentant un compte banquaire
+ * 
+ * @author Ahmed & Sidney
+ */
 @Entity
 @Table (name="account")
 @DiscriminatorColumn (name="type")
 public class Account {
 
+	/**
+	 * Identifiant du compte dans la base de donnée
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private Integer idAccount;
 	
+	/**
+	 * Libelé du compte 
+	 */
 	@Column
 	private String wording;
 	
+	/**
+	 * Solde du compte
+	 */
 	@Column
 	private Float balance;
 	
+	/**
+	 * Numéro du compte 
+	 */
 	@Column
 	private String number;
 	
+	/**
+	 * Date d'ouverture du compte
+	 */
 	@Column
 	private String openingDate;
 	
+	/**
+	 * Chéquier associé au compte
+	 */
 	@OneToOne
 	@JoinColumn(name="idCheck", referencedColumnName="idCheck")
 	private Check check;
 	
 
+	/**
+	 * Constructeur sans argument
+	 */
 	public Account() {
 	}
 
+	/**
+	 * Constructeur avec argument
+	 */
 	public Account(Integer idAccount, String wording, Float balance, String number, String openingDate) {
 		this.idAccount = idAccount;
 		this.wording = wording;
