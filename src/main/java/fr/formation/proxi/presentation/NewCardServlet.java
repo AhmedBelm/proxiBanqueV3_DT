@@ -49,7 +49,7 @@ public class NewCardServlet extends HttpServlet{
             Boolean cardOK = AccountService.getInstance().newCard(idAccount, type);
             
         	if (!cardOK) {
-        		this.getServletContext().getRequestDispatcher("/WEB-INF/views/newcard.jsp").forward(req, resp);
+        		this.getServletContext().getRequestDispatcher("/WEB-INF/views/newCard.jsp").forward(req, resp);
         	} else {
         		this.getServletContext().getRequestDispatcher("/WEB-INF/views/newCard_OK.jsp").forward(req, resp);
         }

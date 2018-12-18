@@ -51,7 +51,7 @@
 				</div>
 				<div class="transfer-button">
 					<a href="card.html?id=${id}">
-						<button class="button">Commander une card</button>
+						<button class="button">Commander une carte</button>
 					</a>
 				</div>
 			</div>
@@ -79,7 +79,10 @@
 						</c:forEach>
 					</table>
 				</c:if>
+<<<<<<< HEAD
+=======
 				<div style="margin-top: 30px" class="card-button"></div>
+>>>>>>> f20ee8b761eb54a2729c5f25567efe5225f2328f
 			</div>
 			<div class="right-list">
 				<h2>Liste des comptes epargne</h2>
