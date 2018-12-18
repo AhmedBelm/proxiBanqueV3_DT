@@ -51,7 +51,7 @@
 				</div>
 				<div class="transfer-button">
 					<a href="card.html?id=${id}">
-						<button class="button">Commander une card</button>
+						<button class="button">Commander une carte</button>
 					</a>
 				</div>
 			</div>
@@ -79,16 +79,6 @@
 						</c:forEach>
 					</table>
 				</c:if>
-				<div style="margin-top: 30px" class="card-button">
-					<a href="card.html?id=${id}">
-						<button class="button">Commander une carte</button>
-					</a>
-				</div>
-				<div style="margin-top: 30px" class="card-button">
-					<a href="check.html?id=${id}">
-						<button class="button">Commander un chéquier</button>
-					</a>
-				</div>
 			</div>
 			<div class="right-list">
 				<h2>Liste des comptes epargne</h2>
@@ -109,11 +99,6 @@
 						</c:forEach>
 					</table>
 				</c:if>
-				<div style="margin-top: 30px" class="card-button">
-					<a href="check.html?id=${id}">
-						<button class="button">Commander un chéquier</button>
-					</a>
-				</div>
 			</div>
 			<div class="footer-button">
 				<a href="index.html">

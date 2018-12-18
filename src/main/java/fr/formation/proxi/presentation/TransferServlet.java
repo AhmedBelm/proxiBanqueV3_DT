@@ -60,7 +60,7 @@ public class TransferServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	String strCredite = req.getParameter("compteAcrediter");
+    	String strCredite = req.getParameter("compteACrediter");
     	String strDebite = req.getParameter("compteADebiter");
         
         Integer clientId = Integer.parseInt(req.getParameter("id"));
