@@ -34,6 +34,17 @@
 		<servlet-name>DashbordServlet</servlet-name>
 		<url-pattern>/dashbord.html</url-pattern>
 	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>CardServlet</servlet-name>
+		<servlet-class>fr.formation.proxi.presentation.AddCardServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CardServlet</servlet-name>
+		<url-pattern>/card.html</url-pattern>
+	</servlet-mapping>
 
 <!-- 	<error-page> -->
 <!-- 		<error-code>404</error-code> -->

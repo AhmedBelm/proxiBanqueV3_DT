@@ -13,13 +13,18 @@ public class MySqlConnection {
 	}
 	
 	private EntityManagerFactory entityManagerFactory;
+	private EntityManager entityManager;
 	
 	
+	/**
+	 * Constructeur par deffaut. Récupère l'instance d'EntityManagerFactory associé à notre unité de persistence.
+	 */
 	public MySqlConnection() {
 		this.entityManagerFactory = Persistence.createEntityManagerFactory("proxibanquev3");
+		this.entityManager = this.entityManagerFactory.createEntityManager();
 	}
 
 	public EntityManager getEntityManager() {
-		return this.entityManagerFactory.createEntityManager();
+		return this.entityManager;
 	}
 }

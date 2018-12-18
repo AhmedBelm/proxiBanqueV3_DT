@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
+import fr.formation.proxi.metier.Address;
 import fr.formation.proxi.metier.Client;
 
 public class ClientDao extends AbstractDao<Client> {
